@@ -4,6 +4,7 @@
 // All Rights Reserved.
 
 using Microsoft.Extensions.DependencyInjection;
+using System.Collections.ObjectModel;
 using Wpf.Ui.Controls;
 
 namespace TechBox.PluginContract
@@ -44,5 +45,13 @@ namespace TechBox.PluginContract
         /// main window's navigation pane after the built-in menu items.
         /// </summary>
         IEnumerable<NavigationViewItem> CreateMenuItems();
+
+        /// <summary>
+        /// Update the navigation menu items contributed by this plugin. They are updated to the
+        /// main window's navigation pane after the built-in menu items.
+        /// </summary>
+        /// <param name="menuItems"></param>
+        /// <returns></returns>
+        ObservableCollection<object> UpdateMenuItems(ObservableCollection<object> menuItems);
     }
 }
